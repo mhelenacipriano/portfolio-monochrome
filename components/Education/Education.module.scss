@@ -1,0 +1,66 @@
+@use '../../styles/variables' as v;
+
+.section {
+  @include v.container;
+  @include v.section-padding(100px);
+}
+
+.eyebrow {
+  @include v.eyebrow;
+  color: v.$gray-666;
+}
+
+.heading {
+  font-family: v.$font-serif;
+  font-size: 44px;
+  margin: 0 0 44px;
+  font-weight: 600;
+
+  @media (max-width: v.$bp-mobile) {
+    font-size: 30px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 32px;
+  padding: 26px 0;
+  border-top: 1px solid v.$black;
+
+  &:last-child {
+    border-bottom: 1px solid v.$black;
+  }
+
+  @media (max-width: v.$bp-mobile) {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.num {
+  font-size: 28px;
+}
+
+.degree {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.note {
+  font-weight: 400;
+  color: v.$gray-999;
+  font-size: 14px;
+}
+
+.school {
+  font-size: 14px;
+  color: v.$gray-555;
+  margin-top: 5px;
+}

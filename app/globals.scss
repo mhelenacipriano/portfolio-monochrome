@@ -1,0 +1,28 @@
+@use '../styles/variables' as v;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: v.$white;
+  font-family: v.$font-sans;
+  color: v.$black;
+}
+
+a {
+  color: v.$black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: v.$gray-ddd;
+}

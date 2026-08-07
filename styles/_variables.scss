@@ -1,0 +1,50 @@
+// Editorial monochrome palette — matches the Claude Design export 1:1.
+$black: #000;
+$white: #fff;
+
+$gray-999: #999; // muted labels / secondary text
+$gray-666: #666; // eyebrow labels on white
+$gray-555: #555; // education institution text
+$gray-444: #444; // project descriptions
+$gray-333: #333; // body copy on white
+$gray-ccc: #ccc; // experience bullet text on black
+$gray-aaa: #aaa; // contact intro text on black
+$gray-f4: #f4f4f4; // project card hover background
+$gray-ddd: #ddd; // scrollbar thumb
+$gray-eee: #eee; // mobile menu link dividers
+$border-dark: #333; // hairlines on black sections
+
+$font-serif: var(--font-serif), 'Bodoni Moda', Georgia, serif;
+$font-sans: 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
+$font-mono: var(--font-mono), 'Space Mono', ui-monospace, monospace;
+
+$max-width: 1180px;
+$gutter-desktop: 56px;
+$gutter-mobile: 24px;
+
+// Single breakpoint per the design spec — nav collapses to a hamburger,
+// all 2-column grids stack to 1, headings step down, section padding
+// goes from 56px to 24px horizontal (vertical padding is unchanged).
+$bp-mobile: 768px;
+
+@mixin container {
+  max-width: $max-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@mixin section-padding($v: 100px) {
+  padding: $v $gutter-desktop;
+  box-sizing: border-box;
+
+  @media (max-width: $bp-mobile) {
+    padding: $v $gutter-mobile;
+  }
+}
+
+@mixin eyebrow {
+  font-family: $font-mono;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+}

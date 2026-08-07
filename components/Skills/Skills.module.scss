@@ -1,0 +1,61 @@
+@use '../../styles/variables' as v;
+
+.section {
+  @include v.container;
+  @include v.section-padding(100px);
+}
+
+.eyebrow {
+  @include v.eyebrow;
+  color: v.$gray-666;
+}
+
+.heading {
+  font-family: v.$font-serif;
+  font-size: 44px;
+  margin: 0 0 44px;
+  font-weight: 600;
+
+  @media (max-width: v.$bp-mobile) {
+    font-size: 30px;
+  }
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.group {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-top: 1px solid v.$black;
+
+  &:last-child {
+    border-bottom: 1px solid v.$black;
+  }
+
+  @media (max-width: v.$bp-mobile) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: v.$gray-999;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+
+.items {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  font-weight: 500;
+}

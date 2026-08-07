@@ -1,0 +1,87 @@
+@use '../../styles/variables' as v;
+
+.section {
+  @include v.section-padding(100px);
+  border-top: 1px solid v.$black;
+}
+
+.inner {
+  @include v.container;
+}
+
+.eyebrow {
+  @include v.eyebrow;
+  color: v.$gray-666;
+}
+
+.heading {
+  font-family: v.$font-serif;
+  font-size: 44px;
+  margin: 0 0 10px;
+  font-weight: 600;
+
+  @media (max-width: v.$bp-mobile) {
+    font-size: 30px;
+  }
+}
+
+.subheading {
+  font-size: 13.5px;
+  color: v.$gray-999;
+  margin: 0 0 46px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: v.$black;
+  border: 1px solid v.$black;
+
+  @media (max-width: v.$bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  text-decoration: none;
+  color: v.$black;
+  background: v.$white;
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  transition: background 0.15s;
+
+  &:hover {
+    background: v.$gray-f4;
+  }
+}
+
+.num {
+  font-family: v.$font-mono;
+  font-size: 11px;
+  color: v.$gray-999;
+  margin-bottom: 18px;
+}
+
+.name {
+  font-family: v.$font-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 14px;
+  color: v.$gray-444;
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.tech {
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}

@@ -1,0 +1,126 @@
+@use '../../styles/variables' as v;
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: v.$white;
+  padding: 26px v.$gutter-desktop;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid v.$black;
+
+  @media (max-width: v.$bp-mobile) {
+    padding: 18px 20px;
+  }
+}
+
+.logo {
+  font-family: v.$font-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  @media (max-width: v.$bp-mobile) {
+    display: none;
+  }
+}
+
+.link {
+  color: v.$black;
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover {
+    color: v.$gray-999;
+  }
+}
+
+.resume {
+  margin-left: 6px;
+  background: v.$black;
+  color: v.$white;
+  padding: 11px 20px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.15s;
+
+  &:hover {
+    color: v.$gray-666;
+  }
+}
+
+// Hamburger — hidden on desktop, shown only at the mobile breakpoint.
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid v.$black;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+
+  @media (max-width: v.$bp-mobile) {
+    display: flex;
+  }
+}
+
+.bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: v.$black;
+}
+
+// Mobile dropdown — always hidden unless both mobile-width and open.
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  padding: 8px 24px 20px;
+  border-bottom: 1px solid v.$black;
+  background: v.$white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  gap: 0;
+
+  @media (max-width: v.$bp-mobile) {
+    &.open {
+      display: flex;
+    }
+  }
+}
+
+.mobileLink {
+  color: v.$black;
+  text-decoration: none;
+  padding: 14px 0;
+  border-top: 1px solid v.$gray-eee;
+}
+
+.mobileResume {
+  color: v.$white;
+  background: v.$black;
+  text-decoration: none;
+  padding: 14px 18px;
+  margin-top: 14px;
+  text-align: center;
+}

@@ -1,0 +1,71 @@
+@use '../../styles/variables' as v;
+
+.section {
+  background: v.$black;
+  color: v.$white;
+  padding: 110px v.$gutter-desktop 90px;
+  box-sizing: border-box;
+
+  @media (max-width: v.$bp-mobile) {
+    padding-left: v.$gutter-mobile;
+    padding-right: v.$gutter-mobile;
+  }
+}
+
+.inner {
+  @include v.container;
+}
+
+.eyebrow {
+  @include v.eyebrow;
+  color: v.$gray-999;
+}
+
+.heading {
+  font-family: v.$font-serif;
+  font-size: 56px;
+  margin: 0 0 24px;
+  font-weight: 600;
+  max-width: 700px;
+  line-height: 1.05;
+
+  @media (max-width: v.$bp-mobile) {
+    font-size: 34px;
+  }
+}
+
+.paragraph {
+  font-size: 16px;
+  color: v.$gray-aaa;
+  max-width: 480px;
+  margin: 0 0 40px;
+}
+
+.links {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  border-top: 1px solid v.$border-dark;
+}
+
+.link {
+  flex: 1;
+  min-width: 220px;
+  color: v.$white;
+  text-decoration: none;
+  padding: 22px 0 22px 24px;
+  border-bottom: 1px solid v.$border-dark;
+  border-left: 1px solid v.$border-dark;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.15s;
+
+  &:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  &:hover {
+    color: v.$gray-999;
+  }
+}
